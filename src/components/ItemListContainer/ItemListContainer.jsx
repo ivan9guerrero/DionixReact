@@ -1,9 +1,35 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import { Link } from "react-router-dom" ;
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
   return (
     <div className="container">
+            <ul >
+            <li style={{ color: "black"}}>
+                <Link to="category/procesador"> 
+                    {props.itemUno} 
+                </Link>
+            </li>
+
+            <li>
+                <Link to="category/placa madre">
+                    {props.itemDos}
+                </Link>
+            </li>
+
+            <li>
+                <Link to="category/fuente">
+                    {props.itemTres}
+                </Link>
+            </li>
+
+            <li>
+                <Link to="category/placa de video">
+                    {props.itemCuatro}
+                </Link>
+            </li>
+        </ul>
       <div className="carousel-container">
         <div className="carousel-wrapper">
           <Carousel fade className="carousel" style={{ width: '1280px', height: '290px' }}>
@@ -31,6 +57,7 @@ const ItemListContainer = () => {
           </Carousel>
         </div>
       </div>
+
     </div>
   );
 };
